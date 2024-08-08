@@ -19,6 +19,7 @@ import useAuthStore from "../../store/authStore";
 import useLikePost from "../../hooks/useLikePost";
 import { timeAgo } from "../../utils/timeAgo";
 import CommentsModal from "../Modals/CommentsModal";
+import { Link } from "react-router-dom";
 
 const PostFooter = ({ post, isProfilePage, creatorProfile }) => {
   const { isCommenting, handlePostComment } = usePostComment();
@@ -62,7 +63,9 @@ const PostFooter = ({ post, isProfilePage, creatorProfile }) => {
       {!isProfilePage && (
         <>
           <Text fontSize={"sm"} fontWeight={700}>
+          <Link to={`/${creatorProfile?.username}`}>
             {creatorProfile?.username}{" "}
+          </Link>
             <Text as="span" fontWeight={400}>
               {post.caption}
             </Text>
