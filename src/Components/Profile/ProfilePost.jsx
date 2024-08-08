@@ -85,6 +85,7 @@ const ProfilePost = ({ post }) => {
           transition={"all 0.3s ease"}
           zIndex={1}
           justifyContent={"center"}
+          //flexDir={"column"}
         >
           <Flex alignItems={"center"} justifyContent={"center"} gap={50}>
             <Flex>
@@ -127,6 +128,7 @@ const ProfilePost = ({ post }) => {
               mx={"auto"}
               maxH={"90vh"}
               minW={"50vh"}
+              flexDirection={{base: "column", md: "row"}}
             >
               <Flex
                 borderRadius={4}
@@ -137,13 +139,16 @@ const ProfilePost = ({ post }) => {
                 justifyContent={"center"}
                 alignItems={"center"}
               >
-                <Image src={post.imageURL} alt="User Post" />
+                <Image
+                  src={post.imageURL}
+                  alt="User Post"
+                />
               </Flex>
               <Flex
                 flex={1}
                 flexDirection={"column"}
                 px={10}
-                display={{ base: "none", md: "flex" }}
+                display={{ base: "flex", md: "flex" }}
               >
                 <Flex alignItems={"center"} justifyContent={"space-between"}>
                   <Flex alignItems={"center"} gap={4}>
