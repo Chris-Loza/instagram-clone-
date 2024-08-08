@@ -117,6 +117,7 @@ const ProfilePost = ({ post }) => {
         onClose={onClose}
         isCentered={true}
         size={{ base: "3xl", md: "5xl" }}
+        scrollBehavior={"inside"}
       >
         <ModalOverlay />
         <ModalContent>
@@ -132,7 +133,6 @@ const ProfilePost = ({ post }) => {
             >
               <Flex
                 borderRadius={4}
-                overflow={"hidden"}
                 border={"1px solid"}
                 borderColor={"whiteAlpha.300"}
                 flex={1.5}
