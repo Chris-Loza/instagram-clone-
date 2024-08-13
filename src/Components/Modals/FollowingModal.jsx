@@ -10,9 +10,12 @@ import {
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
+import useGetFollowing from "../../hooks/useGetFollowing";
+import Following from "../FollowersAndFollowing/Following";
 
 const FollowingModal = ({ followingLength }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { isLoading, followingList } = useGetFollowing();
 
   return (
     <>
@@ -37,7 +40,9 @@ const FollowingModal = ({ followingLength }) => {
               maxH={"250px"}
               overflowY={"auto"}
             >
-              <Text>Hi</Text>
+              {followingList.map((user) => (
+                <Following user={user} key={user.id} />
+              ))}
             </Flex>
           </ModalBody>
         </ModalContent>
