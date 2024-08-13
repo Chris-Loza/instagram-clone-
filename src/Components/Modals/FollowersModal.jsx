@@ -17,7 +17,7 @@ const FollowersModal = ({ followersLength }) => {
   return (
     <>
       <Text fontSize={{ base: "xs", md: "sm" }}>
-        <Button onClick={onOpen}>
+        <Button bg={"transparent"} onClick={onOpen}>
           <Text as="span" fontWeight={"bold"} mr={1}>
             {followersLength}
           </Text>

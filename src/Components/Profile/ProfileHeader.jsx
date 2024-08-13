@@ -11,12 +11,15 @@ import useUserProfileStore from "../../store/userProfileStore";
 import useAuthStore from "../../store/authStore";
 import EditProfile from "./EditProfile";
 import useFollowUser from "../../hooks/useFollowUser";
+import FollowersModal from "../Modals/FollowersModal";
 
 const ProfileHeader = () => {
   const { userProfile } = useUserProfileStore();
   const authUser = useAuthStore((state) => state.user);
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const {isFollowing, isUpdating, handleFollowUser} = useFollowUser(userProfile?.uid);
+  const { isFollowing, isUpdating, handleFollowUser } = useFollowUser(
+    userProfile?.uid
+  );
 
   const visitingOwnProfileAndAuth =
     authUser && authUser.username === userProfile.username;
@@ -85,12 +88,7 @@ const ProfileHeader = () => {
             Posts
           </Text>
 
-          <Text fontSize={{ base: "xs", md: "sm" }}>
-            <Text as="span" fontWeight={"bold"} mr={1}>
-              {userProfile.followers.length}
-            </Text>
-            Followers
-          </Text>
+          <FollowersModal followersLength={userProfile.followers.length} />
 
           <Text fontSize={{ base: "xs", md: "sm" }}>
             <Text as="span" fontWeight={"bold"} mr={1}>
