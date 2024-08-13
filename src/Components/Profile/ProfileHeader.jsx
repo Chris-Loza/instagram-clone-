@@ -12,6 +12,7 @@ import useAuthStore from "../../store/authStore";
 import EditProfile from "./EditProfile";
 import useFollowUser from "../../hooks/useFollowUser";
 import FollowersModal from "../Modals/FollowersModal";
+import FollowingModal from "../Modals/FollowingModal";
 
 const ProfileHeader = () => {
   const { userProfile } = useUserProfileStore();
@@ -80,7 +81,7 @@ const ProfileHeader = () => {
             </Flex>
           )}
         </Flex>
-        <Flex alignItems={"center"} gap={{ base: 2, sm: 4 }}>
+        <Flex alignItems={"center"} gap={{ base: 2, sm: 1 }}>
           <Text fontSize={{ base: "xs", md: "sm" }}>
             <Text as="span" fontWeight={"bold"} mr={1}>
               {userProfile.posts.length}
@@ -89,13 +90,7 @@ const ProfileHeader = () => {
           </Text>
 
           <FollowersModal followersLength={userProfile.followers.length} />
-
-          <Text fontSize={{ base: "xs", md: "sm" }}>
-            <Text as="span" fontWeight={"bold"} mr={1}>
-              {userProfile.following.length}
-            </Text>
-            Following
-          </Text>
+          <FollowingModal followingLength={userProfile.following.length} />
         </Flex>
 
         <Flex alignItems={"center"} gap={4}>
