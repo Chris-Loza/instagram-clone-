@@ -1,4 +1,4 @@
-import { Avatar, Box, Flex, VStack } from "@chakra-ui/react";
+import { Avatar, Box, Flex, Text, VStack } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
 const Follower = ({ user }) => {
