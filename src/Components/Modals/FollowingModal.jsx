@@ -26,7 +26,7 @@ const FollowingModal = ({ followingLength }) => {
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent bg={"black"} border={"1px solid gray"} maxW={"400px"}>
-          <ModalHeader>Followers</ModalHeader>
+          <ModalHeader>Following</ModalHeader>
           <ModalCloseButton />
           <ModalBody pb={6}>
             <Flex
